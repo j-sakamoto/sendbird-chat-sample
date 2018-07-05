@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+}
+
+header {
+  height: 40px;
+}
+
+#wrapper {
+  .chat {
+    width: 50%;
+    padding: 15px;
+    box-sizing: border-box;
+    text-align: center;
+    &.user {
+      float: left;
+      background-color: cornflowerblue;
+    }
+    &.teacher {
+      float: right;
+      background-color: aquamarine;
+    }
+  }
+}
+
+@import "./ChatWindow"

@@ -1,0 +1,76 @@
+.ChatWindow {
+  width: 100%;
+  margin: 0;
+  background-color: white;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: solid #eee 2px;
+
+  &-Header {
+    color: #333;
+    box-sizing: inherit;
+    font-weight: bold;
+    border-bottom: solid #eee 1px;
+    text-align: left;
+    padding: 5px 10px
+  }
+
+  &-Board {
+    margin: 0px;
+    box-sizing: inherit;
+    overflow-y: scroll;
+    height: 60vh;
+    .message-wrapper {
+      display: flex;
+      justify-content: flex-start;
+      &::before {
+        content: "　";
+        flex-basis: 5px;
+        font-size: 5px;
+        margin-right: 10px;
+      }
+      &.teacher::before {
+        background-color: rgb(123, 197, 22);
+      }
+      &.user::before {
+        background-color: rgb(69, 168, 240);
+      }
+      .message {
+        flex-basis: 100%;
+        text-align: left;
+        .name {
+          font-size: 0.5em;
+          font-weight: bold;
+        }
+        .text {
+          display: block;
+          font-size: 0.8em;
+          color: #666;
+        }
+      }
+      .date {
+        display: block;
+        flex-basis: 80px;
+        color: #999;
+        font-size: 0.5em;
+      }
+      border-bottom: solid #eee 1px;
+      font-weight: normal;
+    }
+  }
+
+  &-Footer {
+    box-sizing: inherit;
+    display: flex;
+    justify-content: flex-start;
+    padding: 5px 10px;
+    .inputarea {
+      width: 100%;
+      height: 2em;
+    }
+    .button {
+      margin-left: 10px;
+      width: 50px;
+    }
+  }
+}

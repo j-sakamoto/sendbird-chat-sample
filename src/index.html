@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./css/app.scss">
+  <title>チャットSample</title>
+</head>
+
+<body>
+  <div id="wrapper">
+    <div class="chat user">
+      <p>User側window</p>
+      <iframe id="user-frame" src="./chat.html" frameborder="0" width="100%" height="400px" scrolling="no"></iframe>
+      <iframe id="user-tutor-frame" src="./chat.html" frameborder="0" width="100%" height="400px" scrolling="no"></iframe>
+    </div>
+    <div class="chat teacher">
+      <p>Teacher側window</p>
+      <iframe id="teacher-frame" src="./chat.html" frameborder="0" width="100%" height="400px" scrolling="no"></iframe>
+      <iframe id="tutor-frame" src="./chat.html" frameborder="0" width="100%" height="400px" scrolling="no"></iframe>
+    </div>
+  </div>
+
+  <script>
+      const userWindow = document.querySelector("iframe#user-frame").contentWindow
+      const userTutorWindow = document.querySelector("iframe#user-tutor-frame").contentWindow
+      const teacherWindow = document.querySelector("iframe#teacher-frame").contentWindow
+      const tutorWindow = document.querySelector("iframe#tutor-frame").contentWindow
+
+      const userId = "abcab"
+      const teacherId = "12312"
+      const tutorId = "xyzyx"
+
+      userWindow.title = "講師とのチャット"
+      userWindow.userId = userId
+      userWindow.userName = "受講者"
+      userWindow.party = [teacherId]
+      userWindow.userType = "user"
+
+      userTutorWindow.title = "チューターとのチャット"
+      userTutorWindow.userId = userId
+      userTutorWindow.userName = "受講者"
+      userTutorWindow.party = [tutorId]
+      userTutorWindow.userType = "user"
+
+      teacherWindow.title = "講師から見た受講者とのチャット"
+      teacherWindow.userId = teacherId
+      teacherWindow.userName = "講師"
+      teacherWindow.party = [userId]
+      teacherWindow.userType = "teacher"
+
+      tutorWindow.title = "チューターから見た受講者とのチャット"
+      tutorWindow.userId = tutorId
+      tutorWindow.userName = "チューター"
+      tutorWindow.party = [userId]
+      tutorWindow.userType = "teacher"
+  </script>
+</body>
+</html>

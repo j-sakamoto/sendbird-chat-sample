@@ -11,51 +11,39 @@
 
 <body>
   <div id="wrapper">
-    <div class="chat user">
-      <p>User側window</p>
       <iframe id="user-frame" src="./chat.html" frameborder="0" width="100%" height="400px" scrolling="no"></iframe>
-      <iframe id="user-tutor-frame" src="./chat.html" frameborder="0" width="100%" height="400px" scrolling="no"></iframe>
-    </div>
-    <div class="chat teacher">
-      <p>Teacher側window</p>
-      <iframe id="teacher-frame" src="./chat.html" frameborder="0" width="100%" height="400px" scrolling="no"></iframe>
-      <iframe id="tutor-frame" src="./chat.html" frameborder="0" width="100%" height="400px" scrolling="no"></iframe>
-    </div>
   </div>
 
   <script>
       const userWindow = document.querySelector("iframe#user-frame").contentWindow
-      const userTutorWindow = document.querySelector("iframe#user-tutor-frame").contentWindow
-      const teacherWindow = document.querySelector("iframe#teacher-frame").contentWindow
-      const tutorWindow = document.querySelector("iframe#tutor-frame").contentWindow
+      // const teacherWindow = document.querySelector("iframe#teacher-frame").contentWindow
+      // const tutorWindow = document.querySelector("iframe#tutor-frame").contentWindow
 
-      const userId = "abcab"
-      const teacherId = "12312"
-      const tutorId = "xyzyx"
+      const userId = "5b4703c48786c95bf92da67d"
+      const teacherId = "5b3ae2ad8786c9eb0f50114a"
+      const tutorId = "43b43c34430984160312400"
 
-      userWindow.title = "講師とのチャット"
+      userWindow.title = "受講者からみた講師とのチャット"
       userWindow.userId = userId
-      userWindow.userName = "受講者"
+      userWindow.userName = "講師"
       userWindow.party = [teacherId]
       userWindow.userType = "user"
+      userWindow.token = "f703a797f74803122c712f454221eaa68b3c8541"
 
-      userTutorWindow.title = "チューターとのチャット"
-      userTutorWindow.userId = userId
-      userTutorWindow.userName = "受講者"
-      userTutorWindow.party = [tutorId]
-      userTutorWindow.userType = "user"
+      // teacherWindow.title = "講師から見た受講者とのチャット"
+      // teacherWindow.userId = teacherId
+      // teacherWindow.userName = "講師"
+      // teacherWindow.party = [userId]
+      // teacherWindow.userType = "teacher"
+      // teacherWindow.token = "b51aad03ec06f62e1c96258adda6080f23bb3c3f"
 
-      teacherWindow.title = "講師から見た受講者とのチャット"
-      teacherWindow.userId = teacherId
-      teacherWindow.userName = "講師"
-      teacherWindow.party = [userId]
-      teacherWindow.userType = "teacher"
+      // tutorWindow.title = "トレーナーから見た受講者とのチャット"
+      // tutorWindow.userId = tutorId
+      // tutorWindow.userName = "トレーナー"
+      // tutorWindow.party = [userId]
+      // tutorWindow.userType = "teacher"
+      // tutorWindow.token = "0f3e40dcf22c0c1d22118c92303cbec31fd33f15"
 
-      tutorWindow.title = "チューターから見た受講者とのチャット"
-      tutorWindow.userId = tutorId
-      tutorWindow.userName = "チューター"
-      tutorWindow.party = [userId]
-      tutorWindow.userType = "teacher"
   </script>
 </body>
 </html>

@@ -4,7 +4,7 @@ import React from "react"
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import SendBird from "sendbird"
-const APP_ID = "DF9CAD72-8FE3-4E6F-9EE0-48F6AB2F9E17"
+const APP_ID = "FBB6F43B-5B35-4B63-9740-EBDEF1F87447"
 const sb = new SendBird({ appId: APP_ID })
 
 class ChatWindow extends React.Component {
@@ -61,7 +61,10 @@ class ChatWindow extends React.Component {
 
   connect() {
     return new Promise((resolve, reject) => {
-      sb.connect(this.props.userId, (user, err) => {
+      console.log(this.props.userId);
+      console.log(this.props.party);
+
+      sb.connect(this.props.userId, this.props.token, (user, err) => {
         if (err) return reject(err);
         this.setChannelHandler()
         resolve(user)

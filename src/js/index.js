@@ -9,10 +9,11 @@ console.log(window.userName);
 class App extends React.Component {
   render() {
     return (
-      <ChatWindow title={window.title} userId={window.userId} userName={window.userName} party={window.party} userType={window.userType}/>
+      <ChatWindow title={window.title} userId={window.userId} userName={window.userName} party={window.party} userType={window.userType} token={window.token}/>
     )
   }
 }
+console.log("window.title");
 
 ReactDOM.render(
   <App />,
